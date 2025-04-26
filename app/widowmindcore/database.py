@@ -1,7 +1,8 @@
 # WidowMind Core Database Layer
-
+import os
 import sqlite3
 
+DB_DIR = '/app/database'
 DB_PATH = '/app/database/threat_log.db'
 
 # Insert a new threat record
