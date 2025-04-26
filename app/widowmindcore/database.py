@@ -1,18 +1,18 @@
-# WidowMind Core Database Layer
+﻿# WidowMind Core Database Layer
 import os
 import sqlite3
 
 DB_DIR = '/app/database'
-DB_PATH = '/app/database/threat_log.db'
+DB_PATH = f'{DB_DIR}/threat_log.db'
 
 # Insert a new threat record
-def insert_threat(source, threat_type, detail, score, status, hostname, device_ip):  # <-- fixed here
+def insert_threat(source, threat_type, detail, score, status, hostname, device_ip):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('''
         INSERT INTO threats (source, threat_type, detail, score, status, hostname, device_ip)
         VALUES (?, ?, ?, ?, ?, ?, ?)
-    ''', (source, threat_type, detail, score, status, hostname, device_ip))  # <-- fixed here
+    ''', (source, threat_type, detail, score, status, hostname, device_ip))
     conn.commit()
     conn.close()
 
@@ -35,6 +35,9 @@ def update_threat_status(threat_id, new_status):
 
 # WidowMindCore: Initialize database if missing
 def initialize_database():
+    # 🛠 Create /app/database if missing
+    os.makedirs(DB_DIR, exist_ok=True)
+
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('''
