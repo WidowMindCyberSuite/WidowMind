@@ -1,5 +1,6 @@
-psutil
-pyyaml
-flask
-scapy
+Flask
+Flask-Cors
 gunicorn
+psutil
+scapy
+PyYAML
