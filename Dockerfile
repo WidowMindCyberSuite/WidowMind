@@ -15,4 +15,5 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 EXPOSE 5000
 
 # Launch the app using Gunicorn (high performance server)
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "arachnocore_server:app"]
+CMD ["gunicorn", "widowmindcore:app", "--bind", "0.0.0.0:5000", "--workers", "4"]
+
