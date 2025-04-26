@@ -3,7 +3,7 @@
 FROM python:3.11-slim
 
 # Set working directory inside container
-WORKDIR /app
+WORKDIR /WidowMind/app
 
 # Copy app source code into container
 COPY app/ /app/
