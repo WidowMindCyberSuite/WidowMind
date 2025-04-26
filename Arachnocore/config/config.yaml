@@ -1,0 +1,25 @@
+network_monitor:
+  known_ports: [22, 80, 443, 53, 8080]
+  scan_interval: 5
+
+file_monitor:
+  watch_paths:
+    - "/etc/passwd"
+    - "/etc/shadow"
+    - "/home/joseph/Documents/secret.txt"
+  scan_interval: 5
+
+process_monitor:
+  blacklisted_processes:
+    - "netcat"
+    - "ncat"
+    - "nmap"
+    - "hydra"
+    - "msfconsole"
+    - "python -m http.server"
+    - "minerd"
+    - "xmrig"
+    - "cmd.exe"
+    - "powershell.exe"
+    - "malware_sample"
+  scan_interval: 5
