@@ -6,10 +6,10 @@ FROM python:3.11-slim
 WORKDIR /WidowMind/app
 
 # Copy app source code into container
-COPY app/ /app/
+COPY app/ /WidowMind/app/
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r /WidowMind/app/widowmindcore/requirements.txt
 
 # Expose internal Flask port
 EXPOSE 5000
