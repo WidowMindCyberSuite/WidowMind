@@ -1,4 +1,7 @@
-# app/arachnocore_server.py
+﻿# app/arachnocore_server.py
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from flask import Flask, request, jsonify
 from core.threat_brain import log_threat
@@ -8,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    return "??? WidowMind Core API is running!", 200
+    return "🕷️ WidowMind Core API is running!", 200
 
 @app.route("/api/threat", methods=["POST"])
 def receive_threat():
@@ -42,7 +45,7 @@ def receive_heartbeat():
     hostname = data.get("hostname")
     ip_address = data.get("ip_address")
 
-    print(f"?? Heartbeat received from {hostname} ({ip_address})")
+    print(f"💓 Heartbeat received from {hostname} ({ip_address})")
     return jsonify({"success": True}), 200
 
 if __name__ == "__main__":
