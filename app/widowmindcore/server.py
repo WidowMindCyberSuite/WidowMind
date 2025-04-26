@@ -1,53 +1,73 @@
-﻿# app/arachnocore_server.py
-import sys
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+﻿# app/widowmindcore/server.py
 
 from flask import Flask, request, jsonify
-from core.threat_brain import log_threat
+from flask_cors import CORS
+import logging
 import os
+from widowmindcore.core.threat_brain import log_threat
 
+# Initialize Flask app
 app = Flask(__name__)
+
+# Allow CORS for agents posting from different origins
+CORS(app)
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger('WidowMindCore')
+
+# =========================
+# API ROUTES
+# =========================
 
 @app.route("/", methods=["GET"])
 def home():
-    return "🕷️ WidowMind Core API is running!", 200
+    return jsonify({"message": "🕷️ WidowMind Core API is running!"}), 200
+
+@app.route("/api/health", methods=["GET"])
+def health():
+    return jsonify({"status": "ok"}), 200
 
 @app.route("/api/threat", methods=["POST"])
 def receive_threat():
-    data = request.get_json()
+    data = request.get_json(force=True, silent=True)
     if not data:
+        logger.warning("Received invalid threat JSON.")
         return jsonify({"success": False, "error": "Invalid JSON"}), 400
 
     try:
         source = data.get("source")
         threat_type = data.get("threat_type")
         detail = data.get("detail")
-        score = data.get("score", 1)  # Default score if not provided
-        status = data.get("status", "pending")  # Default status
+        score = data.get("score", 1)
+        status = data.get("status", "pending")
         hostname = data.get("hostname")
         ip_address = data.get("ip_address")
 
-        # Use Threat Brain to log the threat
+        logger.info(f"🛡️ Threat received: {threat_type} from {hostname} ({ip_address})")
+
         log_threat(source, threat_type, detail, score, status, hostname, ip_address)
 
         return jsonify({"success": True}), 201
 
     except Exception as e:
+        logger.error(f"❌ Error processing threat: {str(e)}")
         return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route("/api/heartbeat", methods=["POST"])
 def receive_heartbeat():
-    data = request.get_json()
+    data = request.get_json(force=True, silent=True)
     if not data:
+        logger.warning("Received invalid heartbeat JSON.")
         return jsonify({"success": False, "error": "Invalid JSON"}), 400
 
     hostname = data.get("hostname")
     ip_address = data.get("ip_address")
 
-    print(f"💓 Heartbeat received from {hostname} ({ip_address})")
+    logger.info(f"💓 Heartbeat received from {hostname} ({ip_address})")
+
     return jsonify({"success": True}), 200
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+# =========================
+# END OF API
+# =========================
