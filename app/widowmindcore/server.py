@@ -68,6 +68,31 @@ def receive_heartbeat():
 
     return jsonify({"success": True}), 200
 
+
+from widowmindcore.database import get_all_threats, update_threat_status
+
+@app.route("/api/data", methods=["GET"])
+def get_data():
+    try:
+        threats = get_all_threats()
+        return jsonify(threats), 200
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+@app.route("/api/update_status", methods=["POST"])
+def update_status():
+    try:
+        data = request.get_json()
+        threat_id = data.get('id')
+        new_status = data.get('status')
+
+        update_threat_status(threat_id, new_status)
+
+        return jsonify({"success": True}), 200
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+
 # =========================
 # END OF API
 # =========================
