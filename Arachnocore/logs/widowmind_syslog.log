@@ -1,0 +1,136 @@
+2025-04-25T19:56:25.550515 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T19:56:25.551025 [SYSTEM] Detected OS: Windows
+2025-04-25T19:56:25.551611 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T19:56:25.552036 [SYSTEM] Started agent: FileMonitor
+2025-04-25T19:56:25.552564 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T19:56:25.552980 [SYSTEM] All agents launched successfully.
+2025-04-25T19:57:09.398443 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T20:13:15.785013 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T20:13:15.785351 [SYSTEM] Detected OS: Windows
+2025-04-25T20:13:15.786030 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T20:13:15.786538 [SYSTEM] Started agent: FileMonitor
+2025-04-25T20:13:15.787000 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T20:13:15.787523 [SYSTEM] Started agent: Huntsman
+2025-04-25T20:13:15.788088 [SYSTEM] All agents launched successfully.
+2025-04-25T20:14:02.108092 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T20:14:26.731567 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T20:14:26.731965 [SYSTEM] Detected OS: Windows
+2025-04-25T20:14:26.732548 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T20:14:26.733099 [SYSTEM] Started agent: FileMonitor
+2025-04-25T20:14:26.733680 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T20:14:26.734116 [SYSTEM] Started agent: Huntsman
+2025-04-25T20:14:26.738282 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T20:14:26.739003 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T20:18:03.495129 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T20:25:50.294981 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T20:25:50.295331 [SYSTEM] Detected OS: Windows
+2025-04-25T20:25:50.295821 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T20:25:50.296272 [SYSTEM] Started agent: FileMonitor
+2025-04-25T20:25:50.296803 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T20:25:50.297194 [SYSTEM] Started agent: Huntsman
+2025-04-25T20:25:50.300956 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T20:25:50.301651 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T20:26:02.240154 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T20:27:35.503161 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T20:27:35.503744 [SYSTEM] Detected OS: Windows
+2025-04-25T20:27:35.504512 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T20:27:35.505027 [SYSTEM] Started agent: FileMonitor
+2025-04-25T20:27:35.505615 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T20:27:35.506071 [SYSTEM] Started agent: Huntsman
+2025-04-25T20:27:35.510415 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T20:27:35.511216 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T20:28:09.734188 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T20:28:19.719067 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T20:28:19.719481 [SYSTEM] Detected OS: Windows
+2025-04-25T20:28:19.720090 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T20:28:19.720610 [SYSTEM] Started agent: FileMonitor
+2025-04-25T20:28:19.721069 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T20:28:19.721487 [SYSTEM] Started agent: Huntsman
+2025-04-25T20:28:19.725765 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T20:28:19.726463 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T20:32:55.743773 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T20:33:52.831774 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T20:33:52.832361 [SYSTEM] Detected OS: Windows
+2025-04-25T20:33:52.833066 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T20:33:52.833545 [SYSTEM] Started agent: FileMonitor
+2025-04-25T20:33:52.834056 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T20:33:52.834507 [SYSTEM] Started agent: Huntsman
+2025-04-25T20:33:52.838627 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T20:33:52.839370 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T20:34:14.212779 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T20:49:00.016679 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T20:49:00.017110 [SYSTEM] Detected OS: Windows
+2025-04-25T20:49:00.017855 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T20:49:00.018447 [SYSTEM] Started agent: FileMonitor
+2025-04-25T20:49:00.019261 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T20:49:00.019865 [SYSTEM] Started agent: Huntsman
+2025-04-25T20:49:00.026754 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T20:49:00.027618 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T20:49:43.750475 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T20:57:28.563161 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T20:57:28.563738 [SYSTEM] Detected OS: Windows
+2025-04-25T20:57:28.564384 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T20:57:28.564992 [SYSTEM] Started agent: FileMonitor
+2025-04-25T20:57:28.565598 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T20:57:28.566028 [SYSTEM] Started agent: Huntsman
+2025-04-25T20:57:28.570165 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T20:57:28.570765 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T20:58:10.980584 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T21:03:14.866393 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T21:03:14.866964 [SYSTEM] Detected OS: Windows
+2025-04-25T21:03:14.867679 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T21:03:14.868236 [SYSTEM] Started agent: FileMonitor
+2025-04-25T21:03:14.868753 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T21:03:14.869154 [SYSTEM] Started agent: Huntsman
+2025-04-25T21:03:14.873472 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T21:03:14.874219 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T21:15:12.138071 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T21:18:05.704550 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T21:18:05.705124 [SYSTEM] Detected OS: Windows
+2025-04-25T21:18:05.705872 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T21:18:05.706320 [SYSTEM] Started agent: FileMonitor
+2025-04-25T21:18:05.706826 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T21:18:05.707261 [SYSTEM] Started agent: Huntsman
+2025-04-25T21:18:05.707850 [SYSTEM] Started agent: IntelliSpider
+2025-04-25T21:18:05.711816 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T21:18:05.712448 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T21:18:06.553364 [SYSTEM] [Error] ThreatFox fetch failed: 'str' object has no attribute 'get'
+2025-04-25T21:18:07.775882 [SYSTEM] [IntelliSpider] Synced 0 new threats.
+2025-04-25T21:19:22.449489 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T21:19:36.248535 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T21:19:36.249064 [SYSTEM] Detected OS: Windows
+2025-04-25T21:19:36.249700 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T21:19:36.250198 [SYSTEM] Started agent: FileMonitor
+2025-04-25T21:19:36.250673 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T21:19:36.251097 [SYSTEM] Started agent: Huntsman
+2025-04-25T21:19:36.251690 [SYSTEM] Started agent: IntelliSpider
+2025-04-25T21:19:36.255485 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T21:19:36.256117 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T21:19:37.165050 [SYSTEM] [Error] ThreatFox JSON parse failed: 'str' object has no attribute 'get'
+2025-04-25T21:19:38.098248 [SYSTEM] [IntelliSpider] Synced 0 new threats.
+2025-04-25T21:24:17.337507 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T21:25:49.071403 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T21:25:49.071960 [SYSTEM] Detected OS: Windows
+2025-04-25T21:25:49.072638 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T21:25:49.073109 [SYSTEM] Started agent: FileMonitor
+2025-04-25T21:25:49.073654 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T21:25:49.074142 [SYSTEM] Started agent: Huntsman
+2025-04-25T21:25:49.074737 [SYSTEM] Started agent: IntelliSpider
+2025-04-25T21:25:49.078460 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T21:25:49.078996 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T21:25:49.913491 [SYSTEM] [Error] ThreatFox JSON parse failed: 'str' object has no attribute 'get' Raw: {
+    "query_status": "unknown_operation",
+    "data": "The operation is unknown. Please check the q...
+2025-04-25T21:25:50.877783 [SYSTEM] [IntelliSpider] Synced 0 new threats.
+2025-04-25T21:26:45.340607 [SYSTEM] WidowMind Arachnocore shutdown requested by user.
+2025-04-25T21:26:48.411633 [SYSTEM] WidowMind Arachnocore initializing...
+2025-04-25T21:26:48.412205 [SYSTEM] Detected OS: Windows
+2025-04-25T21:26:48.412894 [SYSTEM] Started agent: NetworkMonitor
+2025-04-25T21:26:48.413357 [SYSTEM] Started agent: FileMonitor
+2025-04-25T21:26:48.413811 [SYSTEM] Started agent: ProcessMonitor
+2025-04-25T21:26:48.414186 [SYSTEM] Started agent: Huntsman
+2025-04-25T21:26:48.414888 [SYSTEM] Started agent: IntelliSpider
+2025-04-25T21:26:48.418782 [SYSTEM] Started WidowMind Dashboard server.
+2025-04-25T21:26:48.419309 [SYSTEM] All agents and dashboard launched successfully.
+2025-04-25T21:26:50.301930 [SYSTEM] [IntelliSpider] Synced 56 new threats.
+2025-04-25T21:35:01.251356 [SYSTEM] WidowMind Arachnocore shutdown requested by user.

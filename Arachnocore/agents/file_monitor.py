@@ -10,6 +10,9 @@ SCAN_INTERVAL = config['file_monitor']['scan_interval']
 
 def hash_file(filepath):
     try:
+        if not os.path.exists(filepath):
+            print(f"[WARNING] File not found: {filepath}")
+            return None
         with open(filepath, "rb") as f:
             data = f.read()
             return hashlib.sha256(data).hexdigest()
@@ -26,9 +29,13 @@ def watch_files():
         time.sleep(SCAN_INTERVAL)
         for path in WATCH_PATHS:
             current_hash = hash_file(path)
-            if current_hash and current_hash != file_hashes.get(path):
+            old_hash = file_hashes.get(path)
+
+            # Only alert if file exists and was changed
+            if current_hash and old_hash and current_hash != old_hash:
                 log_threat("file_monitor", "Unauthorized File Access", f"Change detected in {path}")
                 file_hashes[path] = current_hash
 
 if __name__ == "__main__":
     watch_files()
+

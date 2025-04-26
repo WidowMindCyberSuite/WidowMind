@@ -3,10 +3,12 @@ network_monitor:
   scan_interval: 5
 
 file_monitor:
-  watch_paths:
+  linux_paths:
     - "/etc/passwd"
     - "/etc/shadow"
-    - "/home/joseph/Documents/secret.txt"
+  windows_paths:
+    - "C:/Users/benne/Documents/test_watch.txt"
+    - "C:/Windows/System32/drivers/etc/hosts"
   scan_interval: 5
 
 process_monitor:
@@ -23,3 +25,12 @@ process_monitor:
     - "powershell.exe"
     - "malware_sample"
   scan_interval: 5
+
+huntsman:
+  scan_interval: 300  # 5 minutes
+
+intelli_spider:
+  sync_interval: 43200  # Every 12 hours
+  enable_threatfox: true
+  enable_malwarebazaar: true
+  enable_otx: false  # (Enable later once OTX is fully set up)
