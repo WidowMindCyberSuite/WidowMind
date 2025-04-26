@@ -5,9 +5,12 @@ from flask_cors import CORS
 import logging
 import os
 from widowmindcore.core.threat_brain import log_threat
+from widowmindcore.database import initialize_database
 
 # Initialize Flask app
 app = Flask(__name__)
+
+initialize_database()
 
 # Allow CORS for agents posting from different origins
 CORS(app)
