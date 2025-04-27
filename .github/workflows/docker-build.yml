@@ -1,9 +1,10 @@
-name: Build and Push WidowMind Docker Image
+﻿name: Build and Push WidowMind Docker Image
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:   # 🔥 Manual trigger button in GitHub UI
 
 jobs:
   build:
@@ -29,3 +30,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/widowmind-core:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/widowmind-core:buildcache
+          cache-to: type=inline
+
+      - name: Image Digest
+        run: echo "Image Digest: ${{ steps.docker_build.outputs.digest }}"

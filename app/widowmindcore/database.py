@@ -2,10 +2,13 @@
 import os
 import sqlite3
 
-DB_DIR = '/app/database'
-DB_PATH = f'{DB_DIR}/threat_log.db'
+# === Setup Database Paths Dynamically ===
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+DB_DIR = os.path.join(BASE_DIR, 'database')
+DB_PATH = os.path.join(DB_DIR, 'threat_log.db')
 
-# Insert a new threat record
+# === Database Operations ===
+
 def insert_threat(source, threat_type, detail, score, status, hostname, device_ip):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -16,16 +19,14 @@ def insert_threat(source, threat_type, detail, score, status, hostname, device_i
     conn.commit()
     conn.close()
 
-# Get all threat records
 def get_all_threats():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM threats")
+    cursor.execute("SELECT id, timestamp, source, threat_type, detail, score, status, hostname, device_ip FROM threats ORDER BY id DESC")
     threats = cursor.fetchall()
     conn.close()
     return threats
 
-# Update status of a threat record
 def update_threat_status(threat_id, new_status):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -33,9 +34,10 @@ def update_threat_status(threat_id, new_status):
     conn.commit()
     conn.close()
 
-# WidowMindCore: Initialize database if missing
 def initialize_database():
-    # 🛠 Create /app/database if missing
+    """
+    Create the database and threats table if missing.
+    """
     os.makedirs(DB_DIR, exist_ok=True)
 
     conn = sqlite3.connect(DB_PATH)
@@ -43,11 +45,12 @@ def initialize_database():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS threats (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp TEXT DEFAULT CURRENT_TIMESTAMP,
             source TEXT,
             threat_type TEXT,
             detail TEXT,
             score INTEGER,
-            status TEXT,
+            status TEXT DEFAULT 'pending',
             hostname TEXT,
             device_ip TEXT
         )

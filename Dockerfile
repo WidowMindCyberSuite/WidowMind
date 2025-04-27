@@ -1,24 +1,25 @@
-# WidowMind Core - Best Practice Dockerfile
-
 FROM python:3.11-slim
 
-# Install system dependencies
-RUN apt-get update && \
-    apt-get install -y sqlite3 && \
-    rm -rf /var/lib/apt/lists/*
+# Install required packages
+RUN apt-get update && apt-get install -y \
+    certbot \
+    python3-certbot-nginx \
+    && rm -rf /var/lib/apt/lists/*
 
-# Set working directory inside container
+# Set working directory
 WORKDIR /app
 
-# Copy WidowMind Core source code into container
-COPY app/widowmindcore /app/widowmindcore
+# Copy app code
+COPY ./app/widowmindcore ./widowmindcore
+COPY ./app/database ./database
+COPY ./app/logs ./logs
+COPY requirements.txt .
 
-# Install Python dependencies directly from widowmindcore folder
-RUN pip install --no-cache-dir -r /app/widowmindcore/requirements.txt
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose Flask server port
+# Expose Flask/Gunicorn port
 EXPOSE 5000
 
-# Launch app using Gunicorn (high-performance production server)
-CMD ["gunicorn", "widowmindcore:app", "--bind", "0.0.0.0:5000", "--workers", "4", "--threads", "2", "--timeout", "120"]
-
+# Entry point
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "widowmindcore.server:app"]"4", "-b", "0.0.0.0:5000", "widowmindcore.server:app"]

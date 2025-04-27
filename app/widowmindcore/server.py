@@ -3,6 +3,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import logging
+import os
 from widowmindcore.core.threat_brain import log_threat
 from widowmindcore.database import initialize_database, get_all_threats, update_threat_status
 
@@ -19,13 +20,18 @@ CORS(app)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('WidowMindCore')
 
+# Certificate paths (update these if needed)
+CERT_FOLDER = "/etc/letsencrypt/live/YOUR_DOMAIN_NAME"
+CERT_CHAIN = os.path.join(CERT_FOLDER, "fullchain.pem")
+CERT_KEY = os.path.join(CERT_FOLDER, "privkey.pem")
+
 # =========================
 # API ROUTES
 # =========================
 
 @app.route("/", methods=["GET"])
 def home():
-    return jsonify({"message": "🕷️ WidowMind Core API is running!"}), 200
+    return jsonify({"message": "🕷️ WidowMind Core API is running securely!"}), 200
 
 @app.route("/api/health", methods=["GET"])
 def health():
@@ -45,7 +51,7 @@ def receive_threat():
         score = data.get("score", 1)
         status = data.get("status", "pending")
         hostname = data.get("hostname")
-        device_ip = data.get("device_ip")  # 🔥 Corrected field
+        device_ip = data.get("device_ip")
 
         logger.info(f"🛡️ Threat received: {threat_type} from {hostname} ({device_ip})")
 
@@ -65,7 +71,7 @@ def receive_heartbeat():
         return jsonify({"success": False, "error": "Invalid JSON"}), 400
 
     hostname = data.get("hostname")
-    device_ip = data.get("device_ip")  # 🔥 Corrected field
+    device_ip = data.get("device_ip")
 
     logger.info(f"💓 Heartbeat received from {hostname} ({device_ip})")
 
@@ -99,3 +105,22 @@ def update_status():
 # =========================
 # END OF API
 # =========================
+
+# === LAUNCH POINT ===
+
+if __name__ == "__main__":
+    ssl_context = None
+
+    # Try loading Let's Encrypt certificates
+    if os.path.exists(CERT_CHAIN) and os.path.exists(CERT_KEY):
+        logger.info(f"🔒 SSL certificates found. Enabling HTTPS mode.")
+        ssl_context = (CERT_CHAIN, CERT_KEY)
+    else:
+        logger.warning(f"⚠️ SSL certificates not found. Running in HTTP mode (insecure for production).")
+
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        ssl_context=ssl_context,
+        debug=True
+    )
